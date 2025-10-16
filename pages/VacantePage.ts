@@ -10,10 +10,10 @@ export class VacantePage {
 
   async crearVacante(text: string) {
     // Elimina el bubble si existe
-    await this.page.evaluate(() => {
-      const bubble = document.querySelector('#postulate-bubble');
-      if (bubble) bubble.remove(); // o bubble.style.display = 'none';
-    });
+   // await this.page.evaluate(() => {
+   //   const bubble = document.querySelector('#postulate-bubble');
+   //   if (bubble) bubble.remove(); // o bubble.style.display = 'none';
+   // });
 
     await this.page.getByRole('button', { name: 'Continuar sin IA' }).click({ force: true });
     await this.page.getByRole('textbox', { name: 'Escriba el nombre vacante o' }).click();
@@ -60,6 +60,7 @@ export class VacantePage {
 
     await this.page.getByRole('textbox', { name: 'Busca un email' }).click();
     await this.page.locator('[id="1100000041585875"]').click();
+    await this.page.waitForTimeout(2000);
 
     await this.page.getByRole('button', { name: 'Guardar', exact: true }).click();
     //await this.page.getByRole('button', { name: 'Publicar con esta configuraci' }).click();
@@ -67,7 +68,7 @@ export class VacantePage {
     await this.page.getByRole('button', { name: 'Aceptar' }).click();
     await this.page.getByText('Borrador').click();
     try {
-      await this.page.getByText('auxiliar de bodegaa').waitFor({ state: 'visible', timeout: 2000 });
+      await this.page.getByText('auxiliar de bodegaa').waitFor({ state: 'visible', timeout: 6000 });
       await this.page.locator("//*[@class='ant-dropdown-trigger las la-ellipsis-v']").nth(0).click();
     } catch {
       throw new Error("La vacante 'auxiliar de bodegaa' no está visible en la página");

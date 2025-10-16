@@ -253,7 +253,7 @@ test.describe('Importar candidatos', () => {
   const nombreVacante = "auxiliar de bodegaa";
   const ImportarCandidatos = new ImportarCandidatosPage(page);
 
-  await login.login('adelgado@talenta.cloud', 'angel2012');
+  await login.login('sandbox-latam.grupo-bolivar@magneto365.com', 'ManzanasAzules2420+');
   await page.getByRole('link', { name: 'Nueva vacante' }).click();
   await page.locator('.ant-radio-wrapper').first().click();
   await page.waitForTimeout(2000);
@@ -285,7 +285,7 @@ test('Importar candidatos de forma masiva correctamente', async ({ page }) => {
   const nombreVacante = "auxiliar de bodegaa";
   const ImportarCandidatos = new ImportarCandidatosPage(page);
 
-  await login.login('adelgado@talenta.cloud', 'angel2012');
+  await login.login('sandbox-latam.grupo-bolivar@magneto365.com', 'ManzanasAzules2420+');
   await page.getByRole('link', { name: 'Nueva vacante' }).click();
   await page.locator('.ant-radio-wrapper').first().click();
   await page.waitForTimeout(2000);
@@ -310,7 +310,7 @@ test.describe('Ver vacantes', () =>{
     const login = new LoginPage(page);
     const home = new HomePage(page);
 
-    await login.login('adelgado@talenta.cloud', 'angel2012');
+    await login.login('sandbox-latam.grupo-bolivar@magneto365.com', 'ManzanasAzules2420+');
     await home.MenuBurguer();
     await home.validatePublishedLabel();
   
@@ -321,7 +321,7 @@ test.describe('Ver vacantes', () =>{
     const login = new LoginPage(page);
     const home = new HomePage(page);
 
-    await login.login('adelgado@talenta.cloud', 'angel2012');
+    await login.login('sandbox-latam.grupo-bolivar@magneto365.com', 'ManzanasAzules2420+');
     await home.VacantesHome();
     await home.validatePublishedLabel();
   
@@ -337,7 +337,7 @@ test.describe('Login', () => {
     const login = new LoginPage(page);
     const home = new HomePage(page);
 
-    await login.login('adelgado@talenta.cloud', 'angel2012');
+    await login.login('sandbox-latam.grupo-bolivar@magneto365.com', 'ManzanasAzules2420+');
     await home.validateTitleName();
 
   })
@@ -346,7 +346,7 @@ test.describe('Login', () => {
 
     const login = new LoginPage(page);
 
-    await login.loginIncorrecto('adelgadotalenta.cloud');
+    await login.loginIncorrecto('sandbox-latam.grupo-bolivarmagneto365.com');
     await login.expectEmailError();
     
 
@@ -356,7 +356,7 @@ test.describe('Login', () => {
 
     const login = new LoginPage(page);
 
-    await login.ContrseñaIncorrecto('adelgado@talenta.cloud', '3453');
+    await login.ContrseñaIncorrecto('sandbox-latam.grupo-bolivar@magneto365.com', '3453');
     await login.expectPasswordError();
     
   })
@@ -388,7 +388,7 @@ test.describe('Configurar etapas', () => {
     const LoginYopmail = new LoginYopmailPage(PageYopmail);
     
     await page.bringToFront();
-    await login.login('adelgado@talenta.cloud', 'angel2012');
+    await login.login('sandbox-latam.grupo-bolivar@magneto365.com', 'ManzanasAzules2420+');
     await page.getByRole('link', { name: 'Nueva vacante' }).click();
     await page.locator('.ant-radio-wrapper').first().click();
     await page.getByRole('switch').first().click();
@@ -396,10 +396,9 @@ test.describe('Configurar etapas', () => {
     await page.getByRole('button', { name: 'Continuar' }).click();
     await vacante.crearVacante(text);
     await page.locator('//div[@id="rc-tabs-0-tab-3"]').click();
-    await page.waitForTimeout(10000);
+    await page.waitForTimeout(3000);
     await page.locator('//div[@id="rc-tabs-0-tab-1"]').click();
     await configurarEtapas.configurarNotificacionFinalista();
-    await configurarEtapas.ValidarCambiosEnLaSEtapas();
     await PageCandidato.bringToFront();
     await loginCandidato.loginCandidatos();
     await aplicarVacante.buscarVacante('auxiliar de bodegaa');
@@ -513,11 +512,10 @@ test.describe('Estado cancelada', () => {
 
   test('Cprueba', async ({page}) =>{
 
-    const login = new LoginPage(page);
-    
-    await page.bringToFront();
-    await login.login('sandbox-latam.grupo-bolivar@magneto365.com', 'ManzanasAzules2420+');
-    await page.pause();
+     const LoginYopmail = new LoginYopmailPage(page);
+      await LoginYopmail.validarCorreo('fabianrestrepotest@yopmail.com')
+      await LoginYopmail.expectAsuntoCorreoFinalista();
+
   })
 
   

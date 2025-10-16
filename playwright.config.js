@@ -19,6 +19,7 @@ const config = {
     ignoreHTTPSErrors: true,
     video: 'off',
   },
+  reporter: [['html', { open: 'never' }]],
 
   projects: [
     {

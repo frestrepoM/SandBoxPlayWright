@@ -12,7 +12,7 @@ export class MoverCandidatosPage {
   async moverCandidatoEntreEtapas() {
 
     await this.page.getByText('auxiliar de bodegaa').click();
-    await this.page.locator("(//*[@class='navbarResources__item '])[2]").click();
+    await this.page.getByText('Postularon').click();
     await this.page.locator("(//*[@class='ant-table-cell ant-table-cell-fix-left ant-table-cell-fix-left-last'])[2]").click();
     await this.page.locator("(//*[@class='ant-btn ant-btn-default ant-btn-icon-only actions__button actions__approve tooltip__btn'])[2]").click();
     await this.page.getByRole('button', { name : 'Enviar'}).click();
