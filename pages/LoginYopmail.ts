@@ -23,7 +23,7 @@ export class LoginYopmailPage {
 
     const frame = await this.page.frameLocator('iframe[name="ifmail"]');
    
-    await expect(frame.getByText('Felicitaciones! Actualización del proceso')).toBeVisible();
+    await expect(frame.getByText('Documentos').nth(1)).toBeVisible();
 
   }
 

@@ -19,6 +19,7 @@ export class ImportarCandidatosPage {
     await this.page.click("(//*[@class='ant-select-selector'])[5]");
     await this.page.click("(//*[text()='Finalistas'])");
     await this.page.check("//*[@name='acceptTerms']");
+    await this.page.waitForTimeout(1000);
     await this.page.getByRole('button', { name: 'Invitar' }).click();
 
   }

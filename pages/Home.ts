@@ -25,7 +25,7 @@ export class HomePage {
       }
 
     async validateTitleName() {
-      await expect(this.page.locator("//strong[text()='Angel']")).toBeVisible({timeout:10000});
+      await expect(this.page.locator("//strong[text()='Admin']")).toBeVisible({timeout:10000});
   }
 
 }
