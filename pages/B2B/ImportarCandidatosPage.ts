@@ -13,7 +13,9 @@ export class ImportarCandidatosPage {
   async ImportarCandidatos(email: string) {
 
     // Click en importar
-    await this.page.click("//*[@class='counters__import']");
+    const vacante = this.page.locator(".cardVacancy").filter({
+    has: this.page.locator("h6", { hasText: "auxiliar de bodegaa" })});
+    await this.page.locator("//*[@class='las la-user-plus']").first().click();
     await this.page.locator("(//*[@class='ant-input ant-input-lg'])[1]").fill(email);
     await this.page.waitForTimeout(1500);
     await this.page.click("(//*[@class='ant-select-selector'])[5]");
@@ -27,7 +29,9 @@ export class ImportarCandidatosPage {
   async ImportarCandidatoPruebasPsicologicas(email: string) {
 
     // Click en importar
-    await this.page.click("//*[@class='counters__import']");
+    const vacante = this.page.locator(".cardVacancy").filter({
+    has: this.page.locator("h6", { hasText: "auxiliar de bodegaa" })});
+    await this.page.click("//*[@class='las la-user-plus']");
     await this.page.locator("(//*[@class='ant-input ant-input-lg'])[1]").fill(email);
     await this.page.waitForTimeout(1500);
     await this.page.click("(//*[@class='ant-select-selector'])[5]");
@@ -37,10 +41,12 @@ export class ImportarCandidatosPage {
 
   }
 
-   async ImportarCandidatosHastaContratados(email: string) {
+  async ImportarCandidatosHastaContratados(email: string) {
 
     // Click en importar
-    await this.page.click("//*[@class='counters__import']");
+    const vacante = this.page.locator(".cardVacancy").filter({
+    has: this.page.locator("h6", { hasText: "auxiliar de bodegaa" })});
+    await this.page.click("//*[@class='las la-user-plus']");
     await this.page.locator("(//*[@class='ant-input ant-input-lg'])[1]").fill(email);
     await this.page.waitForTimeout(1500);
     await this.page.click("(//*[@class='ant-select-selector'])[5]");
@@ -52,28 +58,30 @@ export class ImportarCandidatosPage {
 
   }
 
-   async verificarImportacionExitosa() {
+  async verificarImportacionExitosa() {
     await expect(
       this.page.locator("//*[contains(text(), 'El candidato se importó con éxito')]")
     ).toBeVisible();
   }
 
   async verificarDuplicadoImportar() {
-  await expect(
-    this.page.locator("//*[contains(text(), 'El candidato ya ha sido importado a la vacante')]")
-  ).toBeVisible();
- }
+    await expect(
+      this.page.locator("//*[contains(text(), 'El candidato ya ha sido importado a la vacante')]")
+    ).toBeVisible();
+  }
 
   async importarMasivo(fileName: string) {
 
-  const filePath = path.join(process.cwd(), 'test', 'test-data', fileName);
+    const filePath = path.join(process.cwd(), 'test', 'test-data', fileName);
 
-  await this.page.click("//*[@class='counters__import']");
-  await this.page.click("//*[@class='header__tag false header__massive-option']");
-  const fileInput = this.page.locator("//div[contains(@class,'ant-upload-drag')]//input[@type='file']");
-  await fileInput.setInputFiles(filePath);
-  await this.page.check("//*[@name='acceptTerms']");
-  await this.page.click("//*[@class='ant-btn ant-btn-default']");
+    const vacante = this.page.locator(".cardVacancy").filter({
+    has: this.page.locator("h6", { hasText: "auxiliar de bodegaa" })});
+    await this.page.click("//*[@class='las la-user-plus']");
+    await this.page.click("//*[@class='header__tag false header__massive-option']");
+    const fileInput = this.page.locator("//div[contains(@class,'ant-upload-drag')]//input[@type='file']");
+    await fileInput.setInputFiles(filePath);
+    await this.page.check("//*[@name='acceptTerms']");
+    await this.page.click("//*[@class='ant-btn ant-btn-default']");
   }
 
   async verificarFalloImportacionMasivo() {
@@ -83,10 +91,10 @@ export class ImportarCandidatosPage {
   }
 
   async verificarImportacionMasivaExitosa() {
-  await expect(
-    this.page.locator("(//*[normalize-space(.)='¡Bien, hemos vinculado los candidatos!'])[2]")
-  ).toBeVisible();
-}
+    await expect(
+      this.page.locator("(//*[normalize-space(.)='¡Bien, hemos vinculado los candidatos!'])[2]")
+    ).toBeVisible();
+  }
 
 
 }

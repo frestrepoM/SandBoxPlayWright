@@ -12,13 +12,13 @@ export class LoginPage {
   async login(email: string, password: string) {
     const url = process.env.URL ?? '';
     await this.page.goto(url);
-    await this.page.getByRole('textbox', { name: 'Escribe tu email' }).click();
+    await this.page.waitForTimeout(2000);
     await this.page.getByRole('textbox', { name: 'Escribe tu email' }).fill(email);
     await this.page.getByRole('button', { name: 'Continuar' }).click();
-
-    await this.page.getByRole('textbox', { name: 'Escribe tu contraseña' }).click();
+    await this.page.waitForTimeout(1500);
     await this.page.getByRole('textbox', { name: 'Escribe tu contraseña' }).fill(password);
     await this.page.getByRole('button', { name: 'Continuar' }).click();
+    await this.page.waitForTimeout(1500);
   }
 
   async loginIncorrecto(email: string) {
@@ -26,7 +26,7 @@ export class LoginPage {
     const url = process.env.URL ?? '';
 
     await this.page.goto(url);
-    await this.page.getByRole('textbox', { name: 'Escribe tu email' }).click();
+    await this.page.waitForTimeout(1500);
     await this.page.getByRole('textbox', { name: 'Escribe tu email' }).fill(email);
     //await this.page.getByRole('button', { name: 'Continuar' }).click();
 
@@ -49,11 +49,10 @@ export class LoginPage {
     const url = process.env.URL ?? '';
 
     await this.page.goto(url);
-    await this.page.getByRole('textbox', { name: 'Escribe tu email' }).click();
+    await this.page.waitForTimeout(1500);
     await this.page.getByRole('textbox', { name: 'Escribe tu email' }).fill(email);
     await this.page.getByRole('button', { name: 'Continuar' }).click();
-
-    await this.page.getByRole('textbox', { name: 'Escribe tu contraseña' }).click();
+    await this.page.waitForTimeout(1500);
     await this.page.getByRole('textbox', { name: 'Escribe tu contraseña' }).fill(password);
     await this.page.getByRole('button', { name: 'Continuar' }).click();
 
