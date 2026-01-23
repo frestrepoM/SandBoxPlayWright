@@ -50,8 +50,11 @@ export class RegistroCandidato {
     await this.page.getByRole('button', { name: 'Selecciona sectores laborales' }).click();
     await this.page.getByRole('button', { name: 'Administración y oficina' }).click();
     await this.page.getByRole('button', { name: 'select-icon Agrega un cargo,' }).click();
+    await this.page.getByRole('textbox', { name: 'Agrega un cargo, oficio o' }).click();
     await this.page.getByRole('textbox', { name: 'Agrega un cargo, oficio o' }).fill('qa');
-    await this.page.getByRole('button', { name: 'qa' }).click();
+    await this.page.waitForTimeout(1000);
+    await this.page.getByRole('button', { name: 'qa' }).first().click();
+
 
     await this.page.getByRole('textbox', { name: 'Escriba un valor' }).fill('200.0000');
     await this.page.getByRole('button', { name: 'Nivel de estudios arrow-icon' }).click();

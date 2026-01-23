@@ -6,6 +6,8 @@ import { BuscarEmpleoPage } from '../pages/B2B/AplicarVacanteCandidato';
 import { AplicarVacante } from '../pages/B2C/Vacantes';
 import { FormularioSPE } from '../pages/B2C/FormularioSPE';
 import { HojaDeVdia } from '../pages/B2C/HojaDeVida';
+import { tap } from 'node:test/reporters';
+import { Jobsite } from '../pages/B2C/Jobsite';
 
 test.describe('Crear candidato', () => {
 
@@ -20,7 +22,7 @@ test.describe('Crear candidato', () => {
         const registroNivelUno = new RegistroNiveles(page);
 
         await registrasCandidato.registrarCandidato({
-            email: 'fabianrestestone@yopmail.com',
+            email: 'fabianrestestwo@yopmail.com',
             nombre: 'qa',
             apellido: 'sandbox',
             telefono: '3113676864',
@@ -28,7 +30,6 @@ test.describe('Crear candidato', () => {
             ciudad: 'medellin'
         })
         await registroNivelUno.terminarNivelUno();
-        await page.pause();
         await registroNivelUno.verificarClaseBotonNivelUno();
         await eliminarCandidato.eliminarCandidatoPorId();
         await eliminarCandidato.verificarCuentaEliminada();
@@ -46,7 +47,7 @@ test.describe('Crear candidato', () => {
         const registroNivelDos = new RegistroNiveles(page)
 
         await registrasCandidato.registrarCandidato({
-            email: 'fabianrestestone@yopmail.com',
+            email: 'fabianrestestwo@yopmail.com',
             nombre: 'qa',
             apellido: 'sandbox',
             telefono: '3113676864',
@@ -72,7 +73,7 @@ test.describe('Crear candidato', () => {
         const registroNivelDos = new RegistroNiveles(page)
 
         await registrasCandidato.registrarCandidato({
-            email: 'fabianrestestone@yopmail.com',
+            email: 'fabianrestestwo@yopmail.com',
             nombre: 'qa',
             apellido: 'sandbox',
             telefono: '3113676864',
@@ -98,7 +99,7 @@ test.describe('Crear candidato', () => {
         const registroNivelDos = new RegistroNiveles(page)
 
         await registrasCandidato.registrarCandidato({
-            email: 'fabianrestestone@yopmail.com',
+            email: 'fabianrestestwo@yopmail.com',
             nombre: 'qa',
             apellido: 'sandbox',
             telefono: '3113676864',
@@ -124,7 +125,7 @@ test.describe('Crear candidato', () => {
         const registroNivelDos = new RegistroNiveles(page)
 
         await registrasCandidato.registrarCandidato({
-            email: 'fabianrestestone@yopmail.com',
+            email: 'fabianrestestwo@yopmail.com',
             nombre: 'qa',
             apellido: 'sandbox',
             telefono: '3113676864',
@@ -151,7 +152,7 @@ test.describe('Crear candidato', () => {
         const registroNivelTres = new RegistroNiveles(page);
 
         await registrasCandidato.registrarCandidato({
-            email: 'fabianrestestone@yopmail.com',
+            email: 'fabianrestestwo@yopmail.com',
             nombre: 'qa',
             apellido: 'sandbox',
             telefono: '3113676864',
@@ -181,7 +182,7 @@ test.describe('Crear candidato', () => {
         const registroNivelCuatro = new RegistroNiveles(page)
 
         await registrasCandidato.registrarCandidato({
-            email: 'fabianrestestone@yopmail.com',
+            email: 'fabianrestestwo@yopmail.com',
             nombre: 'qa',
             apellido: 'sandbox',
             telefono: '3113676864',
@@ -215,7 +216,7 @@ test.describe('Crear candidato', () => {
         const spe = new FormularioSPE(page);
 
         await registrasCandidato.registrarCandidato({
-            email: 'fabianrestestone@yopmail.com',
+            email: 'fabianrestestwo@yopmail.com',
             nombre: 'qa',
             apellido: 'sandbox',
             telefono: '3113676864',
@@ -226,7 +227,7 @@ test.describe('Crear candidato', () => {
         await registroNivelDos.terminarNivelDosConEstudiosExperencia();
         await registroNivelTres.terminarNivelTres();
         await registroNivelCuatro.terminarNivelCuatro();
-        await aplicarVacanteCandidato.buscarVacante('Test SPE QA AUTOMATIZACION')
+        await aplicarVacanteCandidato.buscarVacanteDesdeElPerfil('Test SPE QA AUTOMATIZACION')
         await aplicarVacanteCandidato.aplicarVacanteYNoCerrar();
         await vacantes.SpeVisible();
         await spe.LlenarFormularioSPEConEstudiosExperencia();
@@ -251,7 +252,7 @@ test.describe('Crear candidato', () => {
         const spe = new FormularioSPE(page);
 
         await registrasCandidato.registrarCandidato({
-            email: 'fabianrestestone@yopmail.com',
+            email: 'fabianrestestwo@yopmail.com',
             nombre: 'qa',
             apellido: 'sandbox',
             telefono: '3113676864',
@@ -262,48 +263,47 @@ test.describe('Crear candidato', () => {
         await registroNivelDos.terminarNivelDosConEstudios();
         await registroNivelTres.terminarNivelTres();
         await registroNivelCuatro.terminarNivelCuatro();
-        await aplicarVacanteCandidato.buscarVacante('Test SPE QA AUTOMATIZACION')
+        await aplicarVacanteCandidato.buscarVacanteDesdeElPerfil('Test SPE QA AUTOMATIZACION')
         await aplicarVacanteCandidato.aplicarVacanteYNoCerrar();
         await vacantes.SpeVisible();
-        await page.pause
         await spe.LlenarFormularioSPEConEstudiosSinExperencia();
         await eliminarCandidato.eliminarCandidatoPorIdConFoto();
         await eliminarCandidato.verificarCuentaEliminada();
     });
 
-    //test('Crear candidato y llenar formulario SPE sin estudios y con experencia  ', async ({ page }) => {   
-    //   // Cierra cualquier popup (nueva pestaña) que se abra
-    //   page.on('popup', async (popup) => {
-    //       await popup.close();
-    //   });
-    //   const eliminarCandidato = new EliminarCandidato(page);
-    //   const registrasCandidato = new RegistroCandidato(page);
-    //   const registroNivelUno = new RegistroNiveles(page);
-    //   const registroNivelDos = new RegistroNiveles(page)
-    //   const registroNivelTres = new RegistroNiveles(page);
-    //   const registroNivelCuatro = new RegistroNiveles(page)
-    //   const aplicarVacanteCandidato = new BuscarEmpleoPage(page);
-    //   const vacantes = new AplicarVacante(page)
-    //   const spe = new FormularioSPE(page)
-    //   await registrasCandidato.registrarCandidato({
-    //       email: 'fabianrestestone@yopmail.com',
-    //       nombre: 'qa',
-    //       apellido: 'sandbox',
-    //       telefono: '3113676864',
-    //       password: 'res123',
-    //       ciudad: 'medellin'
-    //   })
-    //   await registroNivelUno.terminarNivelUno();
-    //   await registroNivelDos.terminarNivelDosConExperenciaYNoVigente();
-    //   await registroNivelTres.terminarNivelTres();
-    //   await registroNivelCuatro.terminarNivelCuatro();
-    //   await aplicarVacanteCandidato.buscarVacante('Test SPE QA AUTOMATIZACION')
-    //   await aplicarVacanteCandidato.aplicarVacanteYNoCerrar();
-    //   await vacantes.SpeVisible();
-    //   await spe.LlenarFormularioSPEConEstudiosSinExperencia();
-    //   await eliminarCandidato.eliminarCandidatoPorIdConFoto();
-    //   await eliminarCandidato.verificarCuentaEliminada();
-    //   });
+    test('Crear candidato y llenar formulario SPE sin estudios y con experencia  ', async ({ page }) => {   
+       // Cierra cualquier popup (nueva pestaña) que se abra
+       page.on('popup', async (popup) => {
+           await popup.close();
+       });
+       const eliminarCandidato = new EliminarCandidato(page);
+       const registrasCandidato = new RegistroCandidato(page);
+       const registroNivelUno = new RegistroNiveles(page);
+       const registroNivelDos = new RegistroNiveles(page)
+       const registroNivelTres = new RegistroNiveles(page);
+       const registroNivelCuatro = new RegistroNiveles(page)
+       const aplicarVacanteCandidato = new BuscarEmpleoPage(page);
+       const vacantes = new AplicarVacante(page)
+       const spe = new FormularioSPE(page)
+       await registrasCandidato.registrarCandidato({
+           email: 'fabianrestestwo@yopmail.com',
+           nombre: 'qa',
+           apellido: 'sandbox',
+           telefono: '3113676864',
+           password: 'res123',
+           ciudad: 'medellin'
+       })
+       await registroNivelUno.terminarNivelUno();
+       await registroNivelDos.terminarNivelDosConExperenciaYNoVigente();
+       await registroNivelTres.terminarNivelTres();
+       await registroNivelCuatro.terminarNivelCuatro();
+       await aplicarVacanteCandidato.buscarVacanteDesdeElPerfil('Test SPE QA AUTOMATIZACION')
+       await aplicarVacanteCandidato.aplicarVacanteYNoCerrar();
+       await vacantes.SpeVisible();
+       await spe.LlenarFormularioSPEConExperenciaSinEstudios();
+       await eliminarCandidato.eliminarCandidatoPorIdConFoto();
+       await eliminarCandidato.verificarCuentaEliminada();
+       });
 
     test('Validar nivel 1 para editar la hoja de vida', async ({ page }) => {
         // Cierra cualquier popup (nueva pestaña) que se abra
@@ -316,7 +316,7 @@ test.describe('Crear candidato', () => {
         const hojaDeVida = new HojaDeVdia(page);
         const eliminarCandidato = new EliminarCandidato(page);
         await registrasCandidato.registrarCandidato({
-            email: 'fabianrestestone@yopmail.com',
+            email: 'fabianrestestwo@yopmail.com',
             nombre: 'qa',
             apellido: 'sandbox',
             telefono: '3113676864',
@@ -343,7 +343,7 @@ test.describe('Crear candidato', () => {
         const hojaDeVida = new HojaDeVdia(page);
         const eliminarCandidato = new EliminarCandidato(page);
         await registrasCandidato.registrarCandidato({
-            email: 'fabianrestestone@yopmail.com',
+            email: 'fabianrestestwo@yopmail.com',
             nombre: 'qa',
             apellido: 'sandbox',
             telefono: '3113676864',
@@ -371,7 +371,7 @@ test.describe('Crear candidato', () => {
         const eliminarCandidato = new EliminarCandidato(page);
 
         await registrasCandidato.registrarCandidato({
-            email: 'fabianrestestone@yopmail.com',
+            email: 'fabianrestestwo@yopmail.com',
             nombre: 'qa',
             apellido: 'sandbox',
             telefono: '3113676864',
@@ -398,7 +398,7 @@ test.describe('Crear candidato', () => {
         const eliminarCandidato = new EliminarCandidato(page);
 
         await registrasCandidato.registrarCandidato({
-            email: 'fabianrestestone@yopmail.com',
+            email: 'fabianrestestwo@yopmail.com',
             nombre: 'qa',
             apellido: 'sandbox',
             telefono: '3113676864',
@@ -425,7 +425,7 @@ test.describe('Crear candidato', () => {
         const eliminarCandidato = new EliminarCandidato(page);
 
         await registrasCandidato.registrarCandidato({
-            email: 'fabianrestestone@yopmail.com',
+            email: 'fabianrestestwo@yopmail.com',
             nombre: 'qa',
             apellido: 'sandbox',
             telefono: '3113676864',
@@ -440,5 +440,42 @@ test.describe('Crear candidato', () => {
         await eliminarCandidato.verificarCuentaEliminada();
 
     });
+
+})
+
+test.describe('Jobsite B2C', () => {
+
+    test('Validar redireccionamiento a jobsite B2C con inicio de sesion', async ({ page }) => {
+        const registrasCandidato = new RegistroCandidato(page); 
+        const registroNivelUno = new RegistroNiveles(page);
+        const registroNivelDos = new RegistroNiveles(page)
+        const registroNivelTres = new RegistroNiveles(page);
+        const registroNivelCuatro = new RegistroNiveles(page)
+        const jobsite = new Jobsite(page);
+        const eliminarCandidato = new EliminarCandidato(page);
+
+        await registrasCandidato.registrarCandidato({
+            email: 'fabianrestestwo@yopmail.com',
+            nombre: 'qa',
+            apellido: 'sandbox',
+            telefono: '3113676864',
+            password: 'res123',
+            ciudad: 'medellin'
+        });
+        await registroNivelUno.terminarNivelUno();
+        await registroNivelDos.terminarNivelDosConEstudiosExperencia();
+        await registroNivelTres.terminarNivelTres();
+        await registroNivelCuatro.terminarNivelCuatro();
+        await jobsite.irAJobsite();
+        await eliminarCandidato.eliminarCandidatoPorIdConFoto();
+        
+    });
+
+
+    test('validar redireccionamiento a jobsite B2C sin inicio de sesion', async ({ page }) => {
+         
+    });
+
+
 
 })

@@ -332,6 +332,7 @@ test.describe('Configurar etapas', () => {
     await page.locator('//div[@id="rc-tabs-0-tab-1"]').click();
     await configurarEtapas.configurarNotificacion();
     await PageCandidato.bringToFront();
+    
     await loginCandidato.loginCandidatos();
     await aplicarVacante.buscarVacante('auxiliar de bodegaa');
     await aplicarVacante.aplicarVacante();

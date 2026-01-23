@@ -22,7 +22,7 @@ export class ImportarCandidatosPage {
     await this.page.click("(//*[text()='Finalistas'])");
     await this.page.check("//*[@name='acceptTerms']");
     await this.page.waitForTimeout(1000);
-    await this.page.getByRole('button', { name: 'Invitar' }).click();
+    await this.page.getByRole('button', { name: 'Invitar' }).nth(0).click();
 
   }
 
@@ -59,6 +59,7 @@ export class ImportarCandidatosPage {
   }
 
   async verificarImportacionExitosa() {
+    this.page.waitForTimeout(2000)
     await expect(
       this.page.locator("//*[contains(text(), 'El candidato se importó con éxito')]")
     ).toBeVisible();

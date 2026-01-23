@@ -13,7 +13,7 @@ async HojaDeVida(): Promise<void> {
 }
 
 async validarTextoHojaDeVidaVisible(): Promise<void> {
-        const locator = this.page.getByText('Para poder elegir entre más de 7 diseños profesionales de hoja de vida', { exact: false });
+        const locator = this.page.getByText('Elige entre más de 7 diseños profesionales de hoja de vida completando tus datos personales,', { exact: false });
         await expect(locator).toBeVisible({ timeout: 7000 });
       }
 

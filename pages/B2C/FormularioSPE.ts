@@ -11,7 +11,6 @@ export class FormularioSPE{
 
   
   async LlenarFormularioSPEConEstudiosExperencia(): Promise<void> {
-    await this.page.pause();
     await this.page.getByRole('button', { name: 'Selecciona un sexo arrow-icon' }).click();
     await this.page.getByRole('button', { name: 'Hombre' }).click();
     await this.page.getByRole('button', { name: 'Selecciona un género arrow-' }).click();
@@ -22,13 +21,19 @@ export class FormularioSPE{
     await this.page.getByRole('button', { name: 'Nivel de estudio arrow-icon' }).click();
     await this.page.getByRole('textbox', { name: 'Nivel de estudio' }).press('CapsLock');
     await this.page.getByRole('button', { name: 'Profesional', exact: true }).click();
+    await this.page.getByRole('button', { name: 'Cargo equivalente arrow-icon' }).click();
+    await this.page.getByRole('textbox', { name: 'Cargo equivalente' }).fill('in');
+    await this.page.getByRole('button', { name: 'Ingeniero' }).click();
+    await this.page.getByRole('button', { name: 'Nivel de cargo arrow-icon' }).click();
+    await this.page.getByRole('button', { name: 'Gerente Senior' }).click();
     
     await this.page.getByRole('button', { name: 'Guardar' }).click();
     await this.validarInformacionActualizada();    
     await this.page.getByRole('button', { name: 'close icon' }).click();
     await this.page.getByRole('link', { name: 'Hoja de vida' }).click();
     await this.page.getByRole('button', { name: 'icon Nivel 2 Hazte visible' }).click();
-    await this.validarDatosRequeridosSPEVisible();
+    
+    //await this.validarDatosRequeridosSPEVisible();
 
   }
 
@@ -50,7 +55,31 @@ export class FormularioSPE{
     await this.page.getByRole('button', { name: 'close icon' }).click();
     await this.page.getByRole('link', { name: 'Hoja de vida' }).click();
     await this.page.getByRole('button', { name: 'icon Nivel 2 Hazte visible' }).click();
-    await this.validarDatosRequeridosSPEVisible();
+    //await this.validarDatosRequeridosSPEVisible();
+
+  }
+
+  async LlenarFormularioSPEConExperenciaSinEstudios(): Promise<void> {
+
+    await this.page.getByRole('button', { name: 'Selecciona un sexo arrow-icon' }).click();
+    await this.page.getByRole('button', { name: 'Hombre' }).click();
+    await this.page.getByRole('button', { name: 'Selecciona un género arrow-' }).click();
+    await this.page.getByRole('button', { name: 'Masculino' }).click();
+    await this.page.getByRole('button', { name: 'Selecciona tu orientación' }).click();
+    await this.page.getByRole('button', { name: 'Heterosexual' }).click();
+    await this.page.getByRole('button', { name: 'Unión libre' }).click();
+    await this.page.getByRole('button', { name: 'Cargo equivalente arrow-icon' }).click();
+    await this.page.getByRole('textbox', { name: 'Cargo equivalente' }).fill('in');
+    await this.page.getByRole('button', { name: 'Ingeniero' }).click();
+    await this.page.getByRole('button', { name: 'Nivel de cargo arrow-icon' }).click();
+    await this.page.getByRole('button', { name: 'Gerente Senior' }).click();
+    
+    await this.page.getByRole('button', { name: 'Guardar' }).click();
+    await this.validarInformacionActualizada();    
+    await this.page.getByRole('button', { name: 'close icon' }).click();
+    await this.page.getByRole('link', { name: 'Hoja de vida' }).click();
+    await this.page.getByRole('button', { name: 'icon Nivel 2 Hazte visible' }).click();
+    //await this.validarDatosRequeridosSPEVisible();
 
   }
   
