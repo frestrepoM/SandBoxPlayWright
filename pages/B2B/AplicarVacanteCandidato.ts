@@ -49,9 +49,14 @@ export class BuscarEmpleoPage {
       hasNot: this.page.locator('h2', { hasText: 'COMFAMA' })});
       await card.scrollIntoViewIfNeeded();
       await card.first().click();
-      await this.page.locator('#mg_job_actions_magneto-ui_external-child_1awr3')
-        .getByRole('button', { name: 'Aplicar' }).click();
+      await this.page.locator('section').filter({
+          hasText: 'Test SPE QA AUTOMATIZACION'})
+          this.page.getByLabel('actions.jobActions')
+          .getByRole('button', { name: 'Aplicar' })
+          .click();
 
+
+      
 
     }
 

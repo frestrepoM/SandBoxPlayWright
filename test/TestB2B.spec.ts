@@ -324,7 +324,6 @@ test.describe('Configurar etapas', () => {
     await page.getByRole('heading', { name: 'Nueva vacante' }).click();
     await page.locator('.ant-radio-wrapper').first().click();
     await page.getByRole('switch').first().click();
-    await page.waitForTimeout(2000);
     await page.getByRole('button', { name: 'Continuar' }).click();
     await vacante.crearVacante(text);
     await page.locator('//div[@id="rc-tabs-0-tab-3"]').click();

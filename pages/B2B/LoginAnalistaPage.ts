@@ -13,7 +13,7 @@ export class LoginPage {
     const url = process.env.URL ?? '';
     await this.page.goto(url);
     await this.page.waitForTimeout(2000);
-    await this.page.getByRole('textbox', { name: 'Escribe tu email' }).fill(email);
+    await this.page.getByRole('textbox', { name: 'Escribe tu correo electrónico' }).fill(email);
     await this.page.getByRole('button', { name: 'Continuar' }).click();
     await this.page.waitForTimeout(1500);
     await this.page.getByRole('textbox', { name: 'Escribe tu contraseña' }).fill(password);
@@ -27,7 +27,7 @@ export class LoginPage {
 
     await this.page.goto(url);
     await this.page.waitForTimeout(1500);
-    await this.page.getByRole('textbox', { name: 'Escribe tu email' }).fill(email);
+    await this.page.getByRole('textbox', { name: 'Escribe tu correo electrónico' }).fill(email);
     //await this.page.getByRole('button', { name: 'Continuar' }).click();
 
   }
@@ -50,7 +50,7 @@ export class LoginPage {
 
     await this.page.goto(url);
     await this.page.waitForTimeout(1500);
-    await this.page.getByRole('textbox', { name: 'Escribe tu email' }).fill(email);
+    await this.page.getByRole('textbox', { name: 'Escribe tu correo electrónico' }).fill(email);
     await this.page.getByRole('button', { name: 'Continuar' }).click();
     await this.page.waitForTimeout(1500);
     await this.page.getByRole('textbox', { name: 'Escribe tu contraseña' }).fill(password);

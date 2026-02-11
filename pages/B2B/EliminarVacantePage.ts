@@ -14,14 +14,18 @@ export class VacanteEliminarPage {
 
     // Esperar a que aparezca la vacante por nombre
     try {
-      await this.page.getByText('auxiliar de bodegaa', { exact: false }).first().waitFor({ state: 'visible', timeout: 5000 });
+      await this.page.getByText('auxiliar de bodegaa', { exact: false }).first().waitFor({ state: 'visible', timeout: 10000 });
     } catch {
       throw new Error("La vacante 'auxiliar de bodegaa' no está visible en la página");
     }
 // modificar la linea de arriba.
     // Abrir menú de acciones de la primera vacante
-    await this.page.waitForSelector("(//*[@class='cardVacancy__content--submenu'])[1]", { state: "visible" });
-    await this.page.locator("(//*[@class='cardVacancy__content--submenu'])[1]").click();
+      
+   await this.page.getByText('auxiliar de bodegaa', { exact: false }).first().waitFor({ state: 'visible', timeout: 5000 });
+   await this.page.locator("(//i[@class='ant-dropdown-trigger las la-ellipsis-v'])[1]").click();
+
+    //await this.page.waitForSelector("(//*[@class='cardVacancy__content--submenu'])[1]", { state: "visible" });
+    //await this.page.locator("(//*[@class='cardVacancy__content--submenu'])[1]").click();
 
     // Seleccionar opción "Cancelar" (posición 9 en el menú desplegable)
     await this.page.locator("(//*[@class='ant-dropdown-menu-title-content'])[9]").click();

@@ -19,6 +19,8 @@ export class ImportarCandidatosPage {
     await this.page.locator("(//*[@class='ant-input ant-input-lg'])[1]").fill(email);
     await this.page.waitForTimeout(1500);
     await this.page.click("(//*[@class='ant-select-selector'])[5]");
+    await this.page.click("(//*[text()='Hombre'])");
+        await this.page.click("(//*[@class='ant-select-selector'])[6]");
     await this.page.click("(//*[text()='Finalistas'])");
     await this.page.check("//*[@name='acceptTerms']");
     await this.page.waitForTimeout(1000);
@@ -50,6 +52,8 @@ export class ImportarCandidatosPage {
     await this.page.locator("(//*[@class='ant-input ant-input-lg'])[1]").fill(email);
     await this.page.waitForTimeout(1500);
     await this.page.click("(//*[@class='ant-select-selector'])[5]");
+    await this.page.click("(//*[text()='Hombre'])");
+        await this.page.click("(//*[@class='ant-select-selector'])[6]");
     await this.page.click("(//*[text()='Finalistas'])");
     await this.page.check("//*[@name='acceptTerms']");
     await this.page.waitForTimeout(1000);
@@ -59,7 +63,7 @@ export class ImportarCandidatosPage {
   }
 
   async verificarImportacionExitosa() {
-    this.page.waitForTimeout(2000)
+    this.page.waitForTimeout(10000)
     await expect(
       this.page.locator("//*[contains(text(), 'El candidato se importó con éxito')]")
     ).toBeVisible();

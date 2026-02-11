@@ -49,7 +49,7 @@ export class RegistroNiveles {
 		await this.page.getByRole('textbox', { name: 'A', exact: true }).nth(2).fill('9');
 		await this.page.getByRole('textbox', { name: 'A', exact: true }).nth(3).fill('7');
 		await this.page.getByRole('button', { name: 'Ciudad', exact: true }).click();
-		await this.page.getByRole('textbox', { name: 'Ciudad' }).fill('medellibn');
+		await this.page.getByRole('textbox', { name: 'Ciudad' }).fill('medellin');
 		await this.page.getByRole('button', { name: 'Medellín, Antioquia, Colombia' }).click();
 		await this.page.getByRole('button', { name: 'Guardar' }).click();
 		await this.page.getByText('No tengo experiencia').click();
@@ -74,7 +74,7 @@ export class RegistroNiveles {
 		await this.page.getByRole('textbox', { name: 'A', exact: true }).nth(2).fill('9');
 		await this.page.getByRole('textbox', { name: 'A', exact: true }).nth(3).fill('7');
 		await this.page.getByRole('button', { name: 'Ciudad', exact: true }).click();
-		await this.page.getByRole('textbox', { name: 'Ciudad' }).fill('medellibn');
+		await this.page.getByRole('textbox', { name: 'Ciudad' }).fill('medellin');
 		await this.page.getByRole('button', { name: 'Medellín, Antioquia, Colombia' }).click();
 		await this.page.getByRole('button', { name: 'Guardar' }).click();
 		await this.page.getByRole('button', { name: 'Añadir experiencia laboral' }).click();
@@ -83,11 +83,13 @@ export class RegistroNiveles {
 		await this.page.getByRole('button', { name: 'Empresa', exact: true }).click();
   		await this.page.getByRole('textbox', { name: 'Empresa' }).fill('qa');
  		await this.page.getByRole('button', { name: 'qa' }).first().click();
-		await this.page.getByRole('textbox', { name: 'Funciones del cargo' }).fill('qaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
 		await this.page.locator('label').filter({ hasText: 'Sí' }).locator('div').click();
 		await this.page.getByRole('combobox').first().selectOption('4');
 		await this.page.getByRole('combobox').nth(1).selectOption('2017');
-		await this.page.waitForTimeout(500);
+		//await this.page.getByRole('button', { name: 'Llenar las funciones manualmente', exact: false }).click();
+		await this.page.locator("//*[@class='descriptionExpIASuggest-module__exp-ia__manual___qcPED']").click();
+		await this.page.getByRole('textbox', { name: 'Funciones del cargo',exact: true }).fill('qaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
+		await this.page.waitForTimeout(1500);
 		await this.page.getByRole('button', { name: 'Guardar' }).click();
 		await this.page.getByText('No tengo estudios').click();
 
@@ -110,7 +112,7 @@ export class RegistroNiveles {
 		await this.page.getByRole('textbox', { name: 'A', exact: true }).nth(2).fill('9');
 		await this.page.getByRole('textbox', { name: 'A', exact: true }).nth(3).fill('7');
 		await this.page.getByRole('button', { name: 'Ciudad', exact: true }).click();
-		await this.page.getByRole('textbox', { name: 'Ciudad' }).fill('medellibn');
+		await this.page.getByRole('textbox', { name: 'Ciudad' }).fill('medellin');
 		await this.page.getByRole('button', { name: 'Medellín, Antioquia, Colombia' }).click();
 		await this.page.getByRole('button', { name: 'Guardar' }).click();
 		await this.page.getByRole('button', { name: 'Añadir experiencia laboral' }).click();
@@ -147,7 +149,7 @@ export class RegistroNiveles {
 		await this.page.getByRole('textbox', { name: 'A', exact: true }).nth(2).fill('9');
 		await this.page.getByRole('textbox', { name: 'A', exact: true }).nth(3).fill('7');
 		await this.page.getByRole('button', { name: 'Ciudad', exact: true }).click();
-		await this.page.getByRole('textbox', { name: 'Ciudad' }).fill('medellibn');
+		await this.page.getByRole('textbox', { name: 'Ciudad' }).fill('medellin');
 		await this.page.getByRole('button', { name: 'Medellín, Antioquia, Colombia' }).click();
 		await this.page.getByRole('button', { name: 'Guardar' }).click();
 		await this.page.getByText('No tengo experiencia').click();
@@ -186,7 +188,7 @@ export class RegistroNiveles {
 		await this.page.getByRole('textbox', { name: 'A', exact: true }).nth(2).fill('9');
 		await this.page.getByRole('textbox', { name: 'A', exact: true }).nth(3).fill('7');
 		await this.page.getByRole('button', { name: 'Ciudad', exact: true }).click();
-		await this.page.getByRole('textbox', { name: 'Ciudad' }).fill('medellibn');
+		await this.page.getByRole('textbox', { name: 'Ciudad' }).fill('medellin');
 		await this.page.getByRole('button', { name: 'Medellín, Antioquia, Colombia' }).click();
 		await this.page.getByRole('button', { name: 'Guardar' }).click();
 		await this.page.getByRole('button', { name: 'Añadir experiencia laboral' }).click();
@@ -196,15 +198,18 @@ export class RegistroNiveles {
 		//await this.page.pause(); // no esta cogiendo el boton empresa para seleccionarlo
   		await this.page.getByRole('textbox', { name: 'Empresa' }).fill('qa');
   		await this.page.getByRole('button', { name: 'qa' }).first().click();
-		await this.page.getByRole('textbox', { name: 'Funciones del cargo' }).fill('qaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
+		//await this.page.getByRole('textbox', { name: 'Funciones del cargo' }).fill('qaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
 		await this.page.locator('label').filter({ hasText: 'Sí' }).locator('div').click();
 		await this.page.getByRole('combobox').first().selectOption('4');
 		await this.page.getByRole('combobox').nth(1).selectOption('2017');
+		await this.page.locator("//*[@class='descriptionExpIASuggest-module__exp-ia__manual___qcPED']").click();
+		await this.page.getByRole('textbox', { name: 'Funciones del cargo',exact: true }).fill('qaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
 		await this.page.getByRole('button', { name: 'Guardar' }).click();
+		await this.page.waitForTimeout(1500);
 		await this.page.getByRole('button', { name: 'Añadir estudios icon' }).click();
 		await this.page.getByRole('button', { name: '¿Qué estudiaste?' }).click();
  		await this.page.getByRole('textbox', { name: '¿Qué estudiaste?' }).fill('ing');
- 		await this.page.getByRole('button', { name: 'ingenieria', exact: true }).click();
+ 		await this.page.getByRole('button', { name: 'ingeniera de telecomunicaciones', exact: true }).click();
  		await this.page.getByRole('button', { name: '¿Dónde estudiaste (institució' }).click();
  		await this.page.getByRole('textbox', { name: '¿Dónde estudiaste (institució' }).fill('politecnico colombiano jaime');
  		await this.page.getByRole('button', { name: 'Politécnico Colombiano Jaime Isaza Cadavid', exact: true }).click();
@@ -236,7 +241,7 @@ export class RegistroNiveles {
 		await this.page.getByRole('textbox', { name: 'A', exact: true }).nth(2).fill('9');
 		await this.page.getByRole('textbox', { name: 'A', exact: true }).nth(3).fill('7');
 		await this.page.getByRole('button', { name: 'Ciudad', exact: true }).click();
-		await this.page.getByRole('textbox', { name: 'Ciudad' }).fill('medellibn');
+		await this.page.getByRole('textbox', { name: 'Ciudad' }).fill('medellin');
 		await this.page.getByRole('button', { name: 'Medellín, Antioquia, Colombia' }).click();
 		await this.page.getByRole('button', { name: 'Guardar' }).click();
 

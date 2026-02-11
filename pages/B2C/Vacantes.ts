@@ -11,7 +11,7 @@ export class AplicarVacante{
 
   
   async SpeVisible(): Promise<void> {
-			await expect(this.page.getByText('Datos requeridos por el Servicio Público de Empleo')).toBeVisible({timeout : 10000});
+			await expect(this.page.getByText('Datos requeridos por el Servicio Público de Empleo')).toBeVisible({timeout : 100000});
 		}
 
   

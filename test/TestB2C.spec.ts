@@ -22,7 +22,7 @@ test.describe('Crear candidato', () => {
         const registroNivelUno = new RegistroNiveles(page);
 
         await registrasCandidato.registrarCandidato({
-            email: 'fabianrestestwo@yopmail.com',
+            email: 'magnetotest@yopmail.com',
             nombre: 'qa',
             apellido: 'sandbox',
             telefono: '3113676864',
@@ -47,7 +47,7 @@ test.describe('Crear candidato', () => {
         const registroNivelDos = new RegistroNiveles(page)
 
         await registrasCandidato.registrarCandidato({
-            email: 'fabianrestestwo@yopmail.com',
+            email: 'magnetotest@yopmail.com',
             nombre: 'qa',
             apellido: 'sandbox',
             telefono: '3113676864',
@@ -73,7 +73,7 @@ test.describe('Crear candidato', () => {
         const registroNivelDos = new RegistroNiveles(page)
 
         await registrasCandidato.registrarCandidato({
-            email: 'fabianrestestwo@yopmail.com',
+            email: 'magnetotest@yopmail.com',
             nombre: 'qa',
             apellido: 'sandbox',
             telefono: '3113676864',
@@ -99,7 +99,7 @@ test.describe('Crear candidato', () => {
         const registroNivelDos = new RegistroNiveles(page)
 
         await registrasCandidato.registrarCandidato({
-            email: 'fabianrestestwo@yopmail.com',
+            email: 'magnetotest@yopmail.com',
             nombre: 'qa',
             apellido: 'sandbox',
             telefono: '3113676864',
@@ -125,7 +125,7 @@ test.describe('Crear candidato', () => {
         const registroNivelDos = new RegistroNiveles(page)
 
         await registrasCandidato.registrarCandidato({
-            email: 'fabianrestestwo@yopmail.com',
+            email: 'magnetotest@yopmail.com',
             nombre: 'qa',
             apellido: 'sandbox',
             telefono: '3113676864',
@@ -152,7 +152,7 @@ test.describe('Crear candidato', () => {
         const registroNivelTres = new RegistroNiveles(page);
 
         await registrasCandidato.registrarCandidato({
-            email: 'fabianrestestwo@yopmail.com',
+            email: 'magnetotest@yopmail.com',
             nombre: 'qa',
             apellido: 'sandbox',
             telefono: '3113676864',
@@ -182,7 +182,7 @@ test.describe('Crear candidato', () => {
         const registroNivelCuatro = new RegistroNiveles(page)
 
         await registrasCandidato.registrarCandidato({
-            email: 'fabianrestestwo@yopmail.com',
+            email: 'magnetotest@yopmail.com',
             nombre: 'qa',
             apellido: 'sandbox',
             telefono: '3113676864',
@@ -216,7 +216,7 @@ test.describe('Crear candidato', () => {
         const spe = new FormularioSPE(page);
 
         await registrasCandidato.registrarCandidato({
-            email: 'fabianrestestwo@yopmail.com',
+            email: 'magnetotest@yopmail.com',
             nombre: 'qa',
             apellido: 'sandbox',
             telefono: '3113676864',
@@ -252,7 +252,7 @@ test.describe('Crear candidato', () => {
         const spe = new FormularioSPE(page);
 
         await registrasCandidato.registrarCandidato({
-            email: 'fabianrestestwo@yopmail.com',
+            email: 'magnetotest@yopmail.com',
             nombre: 'qa',
             apellido: 'sandbox',
             telefono: '3113676864',
@@ -286,7 +286,7 @@ test.describe('Crear candidato', () => {
        const vacantes = new AplicarVacante(page)
        const spe = new FormularioSPE(page)
        await registrasCandidato.registrarCandidato({
-           email: 'fabianrestestwo@yopmail.com',
+           email: 'magnetotest@yopmail.com',
            nombre: 'qa',
            apellido: 'sandbox',
            telefono: '3113676864',
@@ -316,7 +316,7 @@ test.describe('Crear candidato', () => {
         const hojaDeVida = new HojaDeVdia(page);
         const eliminarCandidato = new EliminarCandidato(page);
         await registrasCandidato.registrarCandidato({
-            email: 'fabianrestestwo@yopmail.com',
+            email: 'magnetotest@yopmail.com',
             nombre: 'qa',
             apellido: 'sandbox',
             telefono: '3113676864',
@@ -343,7 +343,7 @@ test.describe('Crear candidato', () => {
         const hojaDeVida = new HojaDeVdia(page);
         const eliminarCandidato = new EliminarCandidato(page);
         await registrasCandidato.registrarCandidato({
-            email: 'fabianrestestwo@yopmail.com',
+            email: 'magnetotest@yopmail.com',
             nombre: 'qa',
             apellido: 'sandbox',
             telefono: '3113676864',
@@ -371,7 +371,7 @@ test.describe('Crear candidato', () => {
         const eliminarCandidato = new EliminarCandidato(page);
 
         await registrasCandidato.registrarCandidato({
-            email: 'fabianrestestwo@yopmail.com',
+            email: 'magnetotest@yopmail.com',
             nombre: 'qa',
             apellido: 'sandbox',
             telefono: '3113676864',
@@ -398,7 +398,7 @@ test.describe('Crear candidato', () => {
         const eliminarCandidato = new EliminarCandidato(page);
 
         await registrasCandidato.registrarCandidato({
-            email: 'fabianrestestwo@yopmail.com',
+            email: 'magnetotest@yopmail.com',
             nombre: 'qa',
             apellido: 'sandbox',
             telefono: '3113676864',
@@ -425,7 +425,7 @@ test.describe('Crear candidato', () => {
         const eliminarCandidato = new EliminarCandidato(page);
 
         await registrasCandidato.registrarCandidato({
-            email: 'fabianrestestwo@yopmail.com',
+            email: 'magnetotest@yopmail.com',
             nombre: 'qa',
             apellido: 'sandbox',
             telefono: '3113676864',
@@ -455,7 +455,7 @@ test.describe('Jobsite B2C', () => {
         const eliminarCandidato = new EliminarCandidato(page);
 
         await registrasCandidato.registrarCandidato({
-            email: 'fabianrestestwo@yopmail.com',
+            email: 'magnetotest@yopmail.com',
             nombre: 'qa',
             apellido: 'sandbox',
             telefono: '3113676864',

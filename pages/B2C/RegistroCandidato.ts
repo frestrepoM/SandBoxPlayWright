@@ -27,8 +27,8 @@ export class RegistroCandidato {
     await this.page.getByRole('textbox', { name: 'Confirmación correo electró' }).fill(email);
 
     await this.page.waitForTimeout(1500);
-    await this.page.mouse.click(708, 630);
-    await this.page.mouse.click(708, 693);
+    await this.page.mouse.click(455, 475);
+    await this.page.mouse.click(456, 538);
 
     await this.page.getByRole('button', { name: 'Siguiente arrow-icon' }).click();
     //await this.page.getByRole('button', { name: 'País de residencia arrow-icon' }).click();
@@ -39,6 +39,7 @@ export class RegistroCandidato {
     await this.page.getByRole('textbox', { name: 'Nombre(s)' }).fill(nombre);
     await this.page.getByRole('textbox', { name: 'Nombre(s)' }).press('Tab');
     await this.page.getByRole('textbox', { name: 'Apellido(s)' }).fill(apellido);
+    // await this.page.getByRole('textbox', { name: 'Indicativo país' }).fill('+57');
     await this.page.getByRole('spinbutton', { name: 'Numero teléfono' }).fill(telefono);
     await this.page.waitForTimeout(1500);
     await this.page.getByRole('button', { name: 'Siguiente arrow-icon' }).click();
@@ -47,6 +48,7 @@ export class RegistroCandidato {
     await this.page.getByRole('textbox', { name: 'Nueva contraseña', exact: true }).fill(password);
     await this.page.getByRole('textbox', { name: 'Confirmar nueva contraseña' }).fill(password);
     await this.page.getByRole('button', { name: 'Siguiente arrow-icon' }).click();
+    await this.page.waitForTimeout(2000);
     await this.page.getByRole('button', { name: 'Selecciona sectores laborales' }).click();
     await this.page.getByRole('button', { name: 'Administración y oficina' }).click();
     await this.page.getByRole('button', { name: 'select-icon Agrega un cargo,' }).click();
