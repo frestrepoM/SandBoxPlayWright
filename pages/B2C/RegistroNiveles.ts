@@ -156,7 +156,7 @@ export class RegistroNiveles {
 		await this.page.getByRole('button', { name: 'Añadir estudios icon' }).click();
 		await this.page.getByRole('button', { name: '¿Qué estudiaste?' }).click();
  		await this.page.getByRole('textbox', { name: '¿Qué estudiaste?' }).fill('ing');
- 		await this.page.getByRole('button', { name: 'ingenieria', exact: true }).click();
+ 		await this.page.getByRole('button', { name: 'ingeniera de telecomunicaciones', exact: true }).click();
  		await this.page.getByRole('button', { name: '¿Dónde estudiaste (institució' }).click();
  		await this.page.getByRole('textbox', { name: '¿Dónde estudiaste (institució' }).fill('politecnico colombiano jaime');
  		await this.page.getByRole('button', { name: 'Politécnico Colombiano Jaime Isaza Cadavid', exact: true }).click();
