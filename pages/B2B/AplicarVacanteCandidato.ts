@@ -21,7 +21,8 @@ export class BuscarEmpleoPage {
 
     await this.page.locator("//*[@placeholder='Busca empleo por cargo o profesión']").click();
     await this.page.locator("//*[@placeholder='Busca empleo por cargo o profesión']").fill(nombreVacante);
-    await this.page.locator("//button[@class='applyButton_application-button__bJoK_ applyButton_apply-btn__leXCI jobOfferDetailActions_job-offer-actions__magneto-apply__UfIrG']").first().press('Enter');
+    await this.page.locator('form').locator('button[type="submit"]').click();
+    //await this.page.locator("//button[@class='mg_main_button_MainButtonComponent_lh5z0 undefined ']").first().press('Enter');
     await this.page.waitForTimeout(1000);
 
 
@@ -55,11 +56,7 @@ export class BuscarEmpleoPage {
       await this.page.locator('section').filter({
           hasText: 'Test SPE QA AUTOMATIZACION'})
           this.page.getByLabel('actions.jobActions')
-          .locator("//button[@class='applyButton_application-button__bJoK_ applyButton_apply-btn__leXCI jobOfferDetailActions_job-offer-actions__magneto-apply__UfIrG']").first().click();
-
-
-      
-
+          .getByRole('button', { name: /aplicar/i }).first().first().click();
     }
 
 
