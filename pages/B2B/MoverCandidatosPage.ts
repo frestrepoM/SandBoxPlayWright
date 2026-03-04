@@ -17,9 +17,9 @@ export class MoverCandidatosPage {
     } catch {
       throw new Error("La vacante 'auxiliar de bodegaa' no está visible en la página");
     }
-    await this.page.getByText('Postularon').click();
+    //await this.page.getByText('Postularon').click();
     await this.page.locator("(//*[@class='ant-table-cell ant-table-cell-fix-left ant-table-cell-fix-left-last'])[2]").click();
-    await this.page.locator("(//*[@class='ant-btn ant-btn-default ant-btn-icon-only actions__button actions__approve tooltip__btn'])[2]").click();
+    await this.page.locator("(//*[@class='ant-btn ant-btn-default ant-btn-icon-only actions__button actions__approve tooltip__btn'])").first().click();
     await this.page.getByRole('button', { name : 'Enviar'}).click();
 
   

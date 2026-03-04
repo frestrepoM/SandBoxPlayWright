@@ -6,8 +6,8 @@ import { VacanteEliminarPage } from '../pages/B2B/EliminarVacantePage';
 import { ImportarCandidatosPage } from '../pages/B2B/ImportarCandidatosPage';
 import { HomePage } from '../pages/B2B/Home';
 import { ConfigurarEtapasPage } from '../pages/B2B/ConfigurarEtapas';
-import { LoginCandidatoPage } from '../pages/B2B/LoginCadidatoPage';
 import { BuscarEmpleoPage } from '../pages/B2B/AplicarVacanteCandidato';
+import { LoginCandidatoPage } from '../pages/B2B/LoginCandidatoPage';
 import { MoverCandidatosPage } from '../pages/B2B/MoverCandidatosPage';
 import { LoginYopmailPage } from '../pages/B2B/LoginYopmail';
 import { CandidatosEstados } from '../pages/B2B/EstadosCandidatos';
@@ -39,7 +39,7 @@ test.describe('Crear vacantes', () => {
     const nombreVacante = "auxiliar de bodegaa";
 
     //await login.login('adelgado@talenta.cloud', 'angel2012');
-    await login.login('sandbox-latam.keralty@magneto365.com', 'ManzanasAzules2420+');
+    await login.login('sandbox-latam.keralty@magneto365.com', 'VentanasCerradas2720+');
     await page.getByRole('heading', { name: 'Nueva vacante' }).click();
     await page.locator('.ant-radio-wrapper').first().click();
     await page.waitForTimeout(1000);
@@ -58,7 +58,7 @@ test.describe('Crear vacantes', () => {
     const nombreVacante = "auxiliar de bodegaa";
 
     //await login.login('adelgado@talenta.cloud', 'angel2012');
-    await login.login('sandbox-latam.keralty@magneto365.com', 'ManzanasAzules2420+');
+    await login.login('sandbox-latam.keralty@magneto365.com', 'VentanasCerradas2720+');
     await page.getByRole('heading', { name: 'Nueva vacante' }).click();
     await page.locator('.ant-radio-wrapper').first().click();
     await page.getByRole('switch').first().click();
@@ -77,7 +77,7 @@ test.describe('Crear vacantes', () => {
     const nombreVacante = "auxiliar de bodegaa";
 
     //await login.login('adelgado@talenta.cloud', 'angel2012');
-    await login.login('sandbox-latam.keralty@magneto365.com', 'ManzanasAzules2420+');
+    await login.login('sandbox-latam.keralty@magneto365.com', 'VentanasCerradas2720+');
     await page.getByRole('heading', { name: 'Nueva vacante' }).click();
     await page.locator('.ant-radio-wrapper').nth(1).click();
     await page.waitForTimeout(2000);
@@ -95,7 +95,7 @@ test.describe('Crear vacantes', () => {
     const nombreVacante = "auxiliar de bodegaa";
 
     //await login.login('adelgado@talenta.cloud', 'angel2012');
-    await login.login('sandbox-latam.keralty@magneto365.com', 'ManzanasAzules2420+');
+    await login.login('sandbox-latam.keralty@magneto365.com', 'VentanasCerradas2720+');
     await page.getByRole('heading', { name: 'Nueva vacante' }).click();
     await page.locator('.ant-radio-wrapper').nth(2).click();
     await page.waitForTimeout(2000);
@@ -114,7 +114,7 @@ test.describe('Crear vacantes', () => {
     const nombreVacante = "auxiliar de bodegaa";
 
     //await login.login('adelgado@talenta.cloud', 'angel2012');
-    await login.login('sandbox-latam.keralty@magneto365.com', 'ManzanasAzules2420+');
+    await login.login('sandbox-latam.keralty@magneto365.com', 'VentanasCerradas2720+');
     await page.getByRole('heading', { name: 'Nueva vacante' }).click();
     await page.locator('.ant-radio-wrapper').nth(2).click();
     await page.getByRole('switch').nth(1).click();
@@ -133,7 +133,7 @@ test.describe('Crear vacantes', () => {
     const nombreVacante = "auxiliar de bodegaa";
 
     //await login.login('adelgado@talenta.cloud', 'angel2012');
-    await login.login('sandbox-latam.keralty@magneto365.com', 'ManzanasAzules2420+');
+    await login.login('sandbox-latam.keralty@magneto365.com', 'VentanasCerradas2720+');
     await page.getByRole('heading', { name: 'Nueva vacante' }).click();
     await page.locator('.ant-radio-wrapper').nth(3).click();
     await page.waitForTimeout(2000);
@@ -156,7 +156,7 @@ test.describe('Importar candidatos', () => {
     const importarIndividual = new ImportarCandidatosPage(page);
 
 
-    await login.login('sandbox-latam.keralty@magneto365.com', 'ManzanasAzules2420+');
+    await login.login('sandbox-latam.keralty@magneto365.com', 'VentanasCerradas2720+');
     await page.getByRole('heading', { name: 'Nueva vacante' }).click();
     await page.locator('.ant-radio-wrapper').first().click();
     await page.waitForTimeout(2000);
@@ -178,7 +178,7 @@ test.describe('Importar candidatos', () => {
     const nombreVacante = "auxiliar de bodegaa";
     const importarIndividual = new ImportarCandidatosPage(page);
 
-    await login.login('sandbox-latam.keralty@magneto365.com', 'ManzanasAzules2420+');
+    await login.login('sandbox-latam.keralty@magneto365.com', 'VentanasCerradas2720+');
     await page.getByRole('heading', { name: 'Nueva vacante' }).click();
     await page.locator('.ant-radio-wrapper').first().click();
     await page.waitForTimeout(2000);
@@ -203,7 +203,7 @@ test.describe('Importar candidatos', () => {
     const nombreVacante = "auxiliar de bodegaa";
     const ImportarCandidatos = new ImportarCandidatosPage(page);
 
-    await login.login('sandbox-latam.keralty@magneto365.com', 'ManzanasAzules2420+');
+    await login.login('sandbox-latam.keralty@magneto365.com', 'VentanasCerradas2720+');
     await page.getByRole('heading', { name: 'Nueva vacante' }).click();
     await page.locator('.ant-radio-wrapper').first().click();
     await page.waitForTimeout(2000);
@@ -226,7 +226,7 @@ test.describe('Importar candidatos', () => {
     const nombreVacante = "auxiliar de bodegaa";
     const ImportarCandidatos = new ImportarCandidatosPage(page);
 
-    await login.login('sandbox-latam.keralty@magneto365.com', 'ManzanasAzules2420+');
+    await login.login('sandbox-latam.keralty@magneto365.com', 'VentanasCerradas2720+');
     await page.getByRole('heading', { name: 'Nueva vacante' }).click();
     await page.locator('.ant-radio-wrapper').first().click();
     await page.waitForTimeout(2000);
@@ -249,7 +249,7 @@ test.describe('Ver vacantes', () => {
     const login = new LoginPage(page);
     const home = new HomePage(page);
 
-    await login.login('sandbox-latam.keralty@magneto365.com', 'ManzanasAzules2420+');
+    await login.login('sandbox-latam.keralty@magneto365.com', 'VentanasCerradas2720+');
     await home.MenuBurguer();
     await home.validatePublishedLabel();
 
@@ -260,7 +260,7 @@ test.describe('Ver vacantes', () => {
     const login = new LoginPage(page);
     const home = new HomePage(page);
 
-    await login.login('sandbox-latam.keralty@magneto365.com', 'ManzanasAzules2420+');
+    await login.login('sandbox-latam.keralty@magneto365.com', 'VentanasCerradas2720+');
     await home.VacantesHome();
     await home.validatePublishedLabel();
 
@@ -276,7 +276,7 @@ test.describe('Inicio de sesion', () => {
     const login = new LoginPage(page);
     const home = new HomePage(page);
 
-    await login.login('sandbox-latam.keralty@magneto365.com', 'ManzanasAzules2420+');
+    await login.login('sandbox-latam.keralty@magneto365.com', 'VentanasCerradas2720+');
     await home.validateTitleName();
 
   })
@@ -320,7 +320,7 @@ test.describe('Configurar etapas', () => {
     const LoginYopmail = new LoginYopmailPage(PageYopmail);
 
     await page.bringToFront();
-    await login.login('sandbox-latam.keralty@magneto365.com', 'ManzanasAzules2420+');
+    await login.login('sandbox-latam.keralty@magneto365.com', 'VentanasCerradas2720+');
     await page.getByRole('heading', { name: 'Nueva vacante' }).click();
     await page.locator('.ant-radio-wrapper').first().click();
     await page.getByRole('switch').first().click();
@@ -365,7 +365,7 @@ test.describe('Estados cubiertas', () => {
     const moverCandidato = new MoverCandidatosPage(page);
 
     await page.bringToFront();
-    await login.login('sandbox-latam.keralty@magneto365.com', 'ManzanasAzules2420+');
+    await login.login('sandbox-latam.keralty@magneto365.com', 'VentanasCerradas2720+');
     await page.getByRole('heading', { name: 'Nueva vacante' }).click();
     await page.locator('.ant-radio-wrapper').nth(3).click();
     //await page.getByRole('switch').first().click();
@@ -408,7 +408,7 @@ test.describe('Estado Descartados', () => {
     const estadoCandidatos = new CandidatosEstados(page);
 
     await page.bringToFront();
-    await login.login('sandbox-latam.keralty@magneto365.com', 'ManzanasAzules2420+');
+    await login.login('sandbox-latam.keralty@magneto365.com', 'VentanasCerradas2720+');
     await page.getByRole('heading', { name: 'Nueva vacante' }).click();
     await page.locator('.ant-radio-wrapper').nth(0).click();
     await page.waitForTimeout(2000);
@@ -445,7 +445,7 @@ test.describe('Estado Descartados', () => {
 
 
     await page.bringToFront();
-    await login.login('sandbox-latam.keralty@magneto365.com', 'ManzanasAzules2420+');
+    await login.login('sandbox-latam.keralty@magneto365.com', 'VentanasCerradas2720+');
     await page.getByRole('heading', { name: 'Nueva vacante' }).click();
     await page.locator('.ant-radio-wrapper').nth(0).click();
     await page.waitForTimeout(2000);
@@ -466,4 +466,3 @@ test.describe('Estado Descartados', () => {
 
   })
 })
-

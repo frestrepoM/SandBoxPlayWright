@@ -1,4 +1,4 @@
-import { Page } from '@playwright/test';
+import { expect, Page } from '@playwright/test';
 
 export class BuscarEmpleoPage {
   readonly page: Page;
@@ -21,7 +21,7 @@ export class BuscarEmpleoPage {
 
     await this.page.locator("//*[@placeholder='Busca empleo por cargo o profesión']").click();
     await this.page.locator("//*[@placeholder='Busca empleo por cargo o profesión']").fill(nombreVacante);
-    await this.page.getByRole('textbox').first().press('Enter');
+    await this.page.locator("//button[@class='applyButton_application-button__bJoK_ applyButton_apply-btn__leXCI jobOfferDetailActions_job-offer-actions__magneto-apply__UfIrG']").first().press('Enter');
     await this.page.waitForTimeout(1000);
 
 
@@ -35,7 +35,10 @@ export class BuscarEmpleoPage {
       await card.scrollIntoViewIfNeeded();
       await card.first().click();
       await this.page.waitForTimeout(1500);
-      await this.page.locator("//*[@class='applyButton_application-button__bJoK_ applyButton_apply-btn__leXCI']").click();
+      const botonAplicar = this.page.getByRole('button', { name: /aplicar/i }).first();
+      await botonAplicar.first().click();
+      //await expect(botonAplicar).toBeDisabled();
+      await expect(this.page.getByText('¡Ya aplicaste!').first()).toBeVisible({ timeout: 15000 });
       
     // Cerrar confirmación
     //await this.page.getByRole('button', { name: 'Cerrar' }).click();
@@ -52,8 +55,7 @@ export class BuscarEmpleoPage {
       await this.page.locator('section').filter({
           hasText: 'Test SPE QA AUTOMATIZACION'})
           this.page.getByLabel('actions.jobActions')
-          .getByRole('button', { name: 'Aplicar' })
-          .click();
+          .locator("//button[@class='applyButton_application-button__bJoK_ applyButton_apply-btn__leXCI jobOfferDetailActions_job-offer-actions__magneto-apply__UfIrG']").first().click();
 
 
       
@@ -73,10 +75,12 @@ export class BuscarEmpleoPage {
       await this.page.locator("//*[@class='applyButton_application-button__bJoK_ applyButton_apply-btn__leXCI']").click();
       
 
-      await this.page.getByRole('button', { name: 'respuesta 2' }).click();
+      await this.page.getByText('respuesta 2', { exact: true }).click();
       await this.page.waitForTimeout(1500);
-
-      await this.page.getByRole('button', { name: 'Enviar respuestas' }).click();
+      await this.page.getByText('Enviar respuestas', { exact: true }).click();
+      await this.page.getByText('Se ha enviado tu aplicación', { exact: true }).first().waitFor({ state: 'visible', timeout: 10000 });
+      
+      //await this.page.getByRole('button', { name: 'Enviar respuestas' }).click();
 
       // Cerrar confirmación
       //await this.page.getByRole('button', { name: 'Cerrar' }).click();

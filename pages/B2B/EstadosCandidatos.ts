@@ -16,7 +16,8 @@ export class CandidatosEstados {
       throw new Error("La vacante 'auxiliar de bodegaa' no está visible en la página");
     }
 
-    await this.page.getByText('Postularon').click();
+    //await this.page.getByText('Descartados').click();
+    await this.page.locator('.activeCounters__item', { hasText: 'Descartados' }).click();
     await this.page.locator('[id="1"]').click();
 
   }
